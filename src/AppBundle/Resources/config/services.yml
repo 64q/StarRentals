@@ -1,0 +1,11 @@
+services:
+    # Upgrader service
+    star_rentals_app.service.upgrader_service:
+        class: AppBundle\Service\UpgraderService
+        arguments: [ @doctrine.orm.entity_manager ]
+
+    star_rentals_app.validator.booking_upgraded:
+        class: AppBundle\Validator\Constraints\ConstraintUpgradedValidator
+        arguments: [ @star_rentals_app.service.upgrader_service ]
+        tags:
+            - { name: validator.constraint_validator, alias: booking_upgraded }

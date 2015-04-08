@@ -1,0 +1,20 @@
+{% extends '@App/base.html.twig' %}
+
+{% block content %}
+    <h1>Star Rentals</h1>
+    <h2>Create Booking</h2>
+
+    <fieldset>
+        {{ form_start(form, { 'attr': { 'id': 'booking-form' } }) }}
+            {{ form_row(form.client, { 'label': 'Client' }) }}
+            {{ form_row(form.vehicle, { 'label': 'Vehicle' }) }}
+            {{ form_row(form.startDate, { 'label': 'Start date' }) }}
+            {{ form_row(form.endDate, { 'label': 'End date' }) }}
+            <div>
+               <button id="check-upgrade">Check upgrade</button><span id="check-result"></span>
+            </div>
+            {{ form_row(form.upgraded, { 'label': 'Upgrade booking' }) }}
+            {{ form_row(form.save, { 'label': 'Create' }) }}
+        {{ form_end(form) }}
+    </fieldset>
+{% endblock %}

@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="jQuery 1.11.2" type="javaScript">
+    <properties>
+      <option name="frameworkName" value="jQuery" />
+      <option name="frameworkVersion" value="1.11.2" />
+    </properties>
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/src/AppBundle/Resources/public/js/jquery-1.11.2.min.js" />
+    </CLASSES>
+    <SOURCES />
+  </library>
+</component>

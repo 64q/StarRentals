@@ -1,0 +1,14 @@
+{% extends '@App/base.html.twig' %}
+
+{% block content %}
+    <h1>Star Rentals</h1>
+    <h2>Create client</h2>
+
+    <fieldset>
+        {{ form_start(form) }}
+            {{ form_row(form.firstname, { 'label': 'First name' }) }}
+            {{ form_row(form.lastname, { 'label': 'Last name' }) }}
+            {{ form_row(form.save, { 'label': 'Create' }) }}
+        {{ form_end(form) }}
+    </fieldset>
+{% endblock %}

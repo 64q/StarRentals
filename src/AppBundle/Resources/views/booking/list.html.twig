@@ -1,0 +1,40 @@
+{% extends '@App/base.html.twig' %}
+
+{% block content %}
+    <h1>Star Rentals</h1>
+
+    <h2>Bookings list</h2>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Client</th>
+            <th>Vehicle</th>
+            <th>Start date</th>
+            <th>End date</th>
+            <th>Upgraded</th>
+            <th>Actions</th>
+        </tr>
+        {% for b in bookings %}
+            <tr>
+                <td>{{ b.id }}</td>
+                <td>{{ b.client }}</td>
+                <td>{{ b.vehicle }}</td>
+                <td>{{ b.startDate|date('m/d/Y H:i:s') }}</td>
+                <td>{{ b.endDate|date('m/d/Y H:i:s') }}</td>
+                <td>{{ b.humanUpgraded }}</td>
+                <td><a href="{{ path('app_booking_update', { 'booking': b.id }) }}">Modify</a></td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">No bookings in database</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <h2>Other actions</h2>
+
+    <ul>
+        <li><a href="{{ path('app_booking_create') }}">Create booking</a></li>
+    </ul>
+{% endblock %}

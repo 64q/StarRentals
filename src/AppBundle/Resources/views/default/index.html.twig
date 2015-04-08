@@ -1,0 +1,14 @@
+{% extends '@App/base.html.twig' %}
+
+{% block content %}
+    <h1>Star Rentals</h1>
+
+    <ul>
+        <li><a href="{{ path('app_vehicle_list') }}">List vehicles</a></li>
+        <li><a href="{{ path('app_vehicle_create') }}">Create vehicle</a></li>
+        <li><a href="{{ path('app_client_list') }}">List clients</a></li>
+        <li><a href="{{ path('app_client_create')}}">Create client</a></li>
+        <li><a href="{{ path('app_booking_list') }}">List bookings</a></li>
+        <li><a href="{{ path('app_booking_create') }}">Create booking</a></li>
+    </ul>
+{% endblock %}

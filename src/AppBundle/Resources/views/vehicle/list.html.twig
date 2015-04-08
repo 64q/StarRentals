@@ -1,0 +1,38 @@
+{% extends '@App/base.html.twig' %}
+
+{% block content %}
+    <h1>Star Rentals</h1>
+
+    <h2>Vehicles list</h2>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Range</th>
+            <th>Color</th>
+            <th>Availability</th>
+            <th>Actions</th>
+        </tr>
+        {% for v in vehicles %}
+            <tr>
+                <td>{{ v.id }}</td>
+                <td>{{ v.name }}</td>
+                <td>{{ v.humanRange }}</td>
+                <td>{{ v.color }}</td>
+                <td>{{ v.humanAvailability }}</td>
+                <td><a href="{{ path('app_vehicle_update', { 'vehicle': v.id }) }}">Modify</a></td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">No vehicles in database</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <h2>Other actions</h2>
+
+    <ul>
+        <li><a href="{{ path('app_vehicle_create') }}">Create vehicle</a></li>
+    </ul>
+{% endblock %}
